@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Bienvenido a los Juegos 🎮</h1>
+
+  <ng-container *ngIf="authService.isLoggedIn(); else notLogged">
+    <p>Usuario: {{ authService.getUser()?.email }}</p>
+    <button (click)="logout()">Cerrar sesión</button>
+  </ng-container>
+
+  <ng-template #notLogged>
+    <button routerLink="/login">Login</button>
+    <button routerLink="/registro">Registro</button>
+  </ng-template>
+</div>
+
+
+
+
+

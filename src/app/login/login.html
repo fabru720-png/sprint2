@@ -1,0 +1,13 @@
+<div class="login-container">
+  <h2>Login</h2>
+  <input [(ngModel)]="email" placeholder="Email" type="email" />
+  <input [(ngModel)]="password" placeholder="Password" type="password" />
+  <button (click)="login()">Ingresar</button>
+  <p *ngIf="error" class="error">{{ error }}</p>
+
+  <div class="quick-login">
+    <p>Accesos rápidos:</p>
+    <button (click)="quickLogin('test@test.com','123456')">Test</button>
+  </div>
+</div>
+
