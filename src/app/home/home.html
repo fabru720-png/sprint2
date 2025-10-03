@@ -1,8 +1,9 @@
 <div class="container">
   <header class="header">
-    <h1> Bienvenido a la Sala de Juegos </h1>
+    <h1>Bienvenido a la Sala de Juegos </h1>
   </header>
 
+  <!-- Si está logueado -->
   <ng-container *ngIf="authService.isLoggedIn(); else notLogged">
     <div class="user-info">
       <p>👤 Usuario: <span class="user-email">{{ authService.getUser()?.email }}</span></p>
@@ -10,8 +11,16 @@
     </div>
   </ng-container>
 
-  
-<router-outlet></router-outlet>
+  <!-- Si NO está logueado -->
+  <ng-template #notLogged>
+    <div class="login-prompt">
+      <p>Por favor, <a routerLink="/login">inicia sesión</a> o <a routerLink="/registro">regístrate</a> para acceder a los juegos.</p>
+    </div>
+  </ng-template>
+
+  <router-outlet></router-outlet>
+</div>
+
 
 
 
