@@ -1,17 +1,17 @@
 <div class="container">
-  <h1>Bienvenido a los Juegos 🎮</h1>
+  <header class="header">
+    <h1> Bienvenido a la Sala de Juegos </h1>
+  </header>
 
   <ng-container *ngIf="authService.isLoggedIn(); else notLogged">
-    <p>Usuario: {{ authService.getUser()?.email }}</p>
-    <button (click)="logout()">Cerrar sesión</button>
+    <div class="user-info">
+      <p>👤 Usuario: <span class="user-email">{{ authService.getUser()?.email }}</span></p>
+      <button type="button" class="btn logout-btn" (click)="logout()">Cerrar sesión</button>
+    </div>
   </ng-container>
 
-  <ng-template #notLogged>
-    <button routerLink="/login">Login</button>
-    <button routerLink="/registro">Registro</button>
-  </ng-template>
-</div>
-
+  
+<router-outlet></router-outlet>
 
 
 

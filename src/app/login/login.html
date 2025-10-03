@@ -1,13 +1,22 @@
 <div class="login-container">
   <h2>Login</h2>
-  <input [(ngModel)]="email" placeholder="Email" type="email" />
-  <input [(ngModel)]="password" placeholder="Password" type="password" />
-  <button (click)="login()">Ingresar</button>
-  <p *ngIf="error" class="error">{{ error }}</p>
+
+  <div class="login-form">
+    <input [(ngModel)]="email" placeholder="✉ Email" type="email" />
+    <input [(ngModel)]="password" placeholder="🔒 Password" type="password" />
+    <button class="btn login-btn" (click)="login()">Ingresar</button>
+    <p *ngIf="error" class="error">{{ error }}</p>
+  </div>
 
   <div class="quick-login">
-    <p>Accesos rápidos:</p>
-    <button (click)="quickLogin('test@test.com','123456')">Test</button>
+    <p></p>
+    <button class="btn quick-btn" (click)="quickLogin('test@test.com','123456')">Acceso Rapido</button>
   </div>
+ <div class="registro-link">
+  <p>¿No tienes cuenta? 
+    <a routerLink="/registro" class="link">Registrarse</a>
+  </p>
 </div>
+
+<router-outlet></router-outlet>
 
