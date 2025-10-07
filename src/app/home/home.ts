@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
   templateUrl: './home.html',
   styleUrls: ['./home.css'],
   standalone: true,
-  imports: [FormsModule, CommonModule,RouterModule] 
+  imports: [FormsModule, CommonModule,RouterModule],
 })
 export class Home {
   constructor(public authService: AuthService) {}

@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged, User } from '@angular/fire/auth';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  user: User | null = null;
+  private _user = new BehaviorSubject<User | null>(null);
+  authState$: Observable<User | null> = this._user.asObservable();
 
   constructor(private auth: Auth, private router: Router) {
     onAuthStateChanged(this.auth, (user) => {
-      this.user = user;
+      this._user.next(user);
     });
   }
 
@@ -38,10 +40,10 @@ export class AuthService {
   }
 
   getUser(): User | null {
-    return this.user;
+    return this._user.value;
   }
 
   isLoggedIn(): boolean {
-    return this.user !== null;
+    return this._user.value !== null;
   }
 }

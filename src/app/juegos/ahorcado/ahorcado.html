@@ -1,0 +1,24 @@
+<div class="ahorcado-container">
+  <h2>Ahorcado 🪢</h2>
+  <div class="palabra">
+    <span *ngFor="let letra of palabraActual">{{ letra }}</span>
+  </div>
+
+  <div class="info">
+    <p>Intentos restantes: {{ intentosRestantes }}</p>
+    <p>Letras usadas: {{ letraUsada.join(", ") }}</p>
+  </div>
+
+  <div class="botones-letras">
+    <button 
+      *ngFor="let letra of letras" 
+      (click)="adivinar(letra)" 
+      [disabled]="letraUsada.includes(letra) || intentosRestantes <= 0">
+      {{ letra }}
+    </button>
+  </div>
+
+  <button (click)="reiniciarJuego()" class="reiniciar">🔄 Reiniciar Juego</button>
+</div>
+
+

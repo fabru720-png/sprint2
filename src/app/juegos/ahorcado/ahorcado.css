@@ -1,0 +1,61 @@
+.ahorcado-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: radial-gradient(circle, #fff3e0, #ffe0b2);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+h2 {
+  color: #ff6f00;
+  font-family: Arial, sans-serif;
+}
+
+.palabra {
+  display: flex;
+  gap: 10px;
+  font-size: 2rem;
+  margin: 20px 0;
+}
+
+.info {
+  margin-bottom: 20px;
+}
+
+.botones-letras {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+button {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #ff9800;
+  color: white;
+  transition: background 0.3s;
+}
+
+button:hover:not(:disabled) {
+  background: #f57c00;
+}
+
+button:disabled {
+  background: #bdbdbd;
+  cursor: not-allowed;
+}
+
+.reiniciar {
+  margin-top: 15px;
+  background: #f44336;
+}
+
+.reiniciar:hover {
+  background: #d32f2f;
+}

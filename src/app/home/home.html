@@ -8,7 +8,13 @@
     <div class="user-info">
       <p>👤 Usuario: <span class="user-email">{{ authService.getUser()?.email }}</span></p>
       <button type="button" class="btn logout-btn" (click)="logout()">Cerrar sesión</button>
+       <nav>
+      <a routerLink="/juegos/ahorcado">Ahorcado</a>
+      <a routerLink="/juegos/mayor-menor">Mayor o Menor</a>
+      <a routerLink="/chat">Chat</a> 
+    </nav>
     </div>
+     <router-outlet></router-outlet>
   </ng-container>
 
   <!-- Si NO está logueado -->
@@ -17,6 +23,8 @@
       <p>Por favor, <a routerLink="/login">inicia sesión</a> o <a routerLink="/registro">regístrate</a> para acceder a los juegos.</p>
     </div>
   </ng-template>
+
+
 
   <router-outlet></router-outlet>
 </div>

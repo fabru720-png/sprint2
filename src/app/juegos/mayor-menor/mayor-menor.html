@@ -1,0 +1,21 @@
+<div class="game-container">
+  <header class="game-header">
+    <h2>Mayor o Menor</h2>
+    <p>¿La siguiente carta es mayor o menor?</p>
+  </header>
+
+  <div class="card-display">
+    <div class="card">{{ cartaActual }}</div>
+  </div>
+
+  <div class="controls">
+    <button (click)="jugar('mayor')">Mayor</button>
+    <button (click)="jugar('menor')">Menor</button>
+  </div>
+
+  <div class="status">
+    <p>Puntos: {{ puntos }}</p>
+    <p>Carta siguiente: {{ cartaSiguiente }}</p>
+  </div>
+</div>
+
